@@ -1,0 +1,39 @@
+//lessw文件其实就是一个文本文件
+// 变量
+@baseColor:#e92322;
+a{
+  color: @baseColor;
+}
+div{
+  border: 1px solid @baseColor;
+}
+//相当与函数封装
+.addRadius(@r:5px){
+  border-radius: @r;
+  -webkit-border-radius: @r;
+  -moz-border-radius: @r;
+}
+div{
+  width: 200px;
+  height: 200px;
+  .addRadius(10px);
+}
+//嵌套
+header{
+  width: 100%;
+  background-color: @baseColor;
+  >div{
+    width: 100%;
+    border: 1px solid #ccc;
+    .addRadius(6px);
+    a{
+    font-size: 20px;
+      display: block;
+      &:hover{
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+//表达式

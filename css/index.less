@@ -1,0 +1,380 @@
+@baseColor:#e92322;
+.wjs_header{
+  border-bottom: 1px solid #ccc;
+  height: 50px;
+  line-height: 50px;
+  .row{
+    text-align: center;
+    >div:nth-of-type(-n+3){
+      border-right: 1px solid #ccc;
+      .wjs_code{
+        display: block;
+        position: relative;
+        img{
+          display: none;
+          border: 1px solid #ccc;
+          position: absolute;
+          left:50%;
+          top:49px;
+          transform: translate(-50%,0);
+
+        }
+        &:hover img{
+          display: block;
+          border-top: none;
+          z-index: 10;
+        }
+      }
+    }
+    >div:nth-last-of-type(1){
+      border-right: none;
+      .btn-danger{
+        background-color: @baseColor;
+        padding: 3px 15px;
+      }
+      .btn-link{
+        color: #666;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+//导航栏
+.wjs_nav{
+  &.navbar{
+    margin-bottom: 0;
+  }
+  .navbar-brand{
+      height: 80px;
+      line-height: 50px;
+    .wjs_icon{
+      font-size: 40px;
+    }
+    span:nth-of-type(1){
+     color: @baseColor;
+    }
+    span:nth-of-type(2){
+      color: #333;
+    }
+  }
+  .navbar-nav{
+    >li{
+      padding-left: 5px;
+      >a{
+        line-height: 50px;
+        font-size: 18px;
+        &:hover{
+          border-bottom: 3px solid @baseColor;
+        }
+      }
+    }
+    .active{
+      a,a:hover,a:focus{
+        background-color: transparent;
+        border-bottom: 3px solid @baseColor;
+      }
+     }
+  }
+  .navbar-toggle{
+    margin-top:23px;
+  }
+
+}
+//轮播图
+/*
+轮播图的效果  在移动端只屏幕变大  图片也变大  可以用img标签来做
+pc端 无论屏幕怎么变化  图片始终现在在中间用背景图片做  conver
+*/
+.wjs_banner{
+  .mobileImg{
+    width:100%;
+  }
+  .mobileImg>img{
+    width: 100%;
+    display: block;
+  }
+  .pcImg{
+    width: 100%;
+    height: 410px;
+    display: block;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+//信息部分
+.wjs_info{
+  padding: 50px;
+  .wjs_icon{
+    font-size: 30px;
+  }
+  .row{
+    >div{
+      margin-top: 20px;
+      a{
+        &:hover{
+          color:@baseColor;
+        }
+      }
+    }
+  }
+}
+//预约块
+.wjs_reverse{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  .wjs_icon{
+    font-size: 18px;
+    height: 60px;
+    line-height: 60px;
+  }
+  a{
+    &:hover{
+      color: @baseColor;
+    }
+  }
+  a:nth-of-type(2){
+    color: @baseColor;
+    border-bottom: 1px dashed @baseColor;
+  }
+}
+//产品块
+.wjs_product{
+  background-color: #eee;
+  padding: 20px;
+  .container{
+    padding-left: 0;
+    padding-right: 0;
+    .tab_parent{
+      overflow: hidden;
+      li{
+        height: 80px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        a{
+          line-height: 57px;
+          border-radius: 0;
+          border: 0;
+          &:hover{
+            border-bottom: 3px solid @baseColor;
+            background-color: transparent;
+          }
+        }
+        &.active{
+          a,a:hover,a:focus{
+            border: none;
+            background-color: transparent;
+            border-bottom: 3px solid @baseColor;
+          }
+
+        }
+      }
+    }
+  /*产品内容*/
+    .tab-content{
+
+      .wjs_proBox{
+        margin-top: 20px;
+        &.active{
+          color: #fff;
+          .left{
+            background-color: @baseColor;
+          }
+          .right{
+            background-color: @baseColor;
+            b,sub{
+              color: #fff;
+            }
+          }
+        }
+      }
+      .right{
+        width: 100px;
+        height: 150px;
+        float: right;
+        background-color: #fff;
+        position: relative;
+        border-left: 1px dashed #ccc;
+        padding-top: 30px;
+        text-align: center;
+        &::before,&::after{
+          content: "";
+          display: block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          left: -5px;
+          background-color: #eee;
+        }
+        &::before{
+          top: -5px;
+          box-shadow: 0px -1px 1px #ddd inset;
+        }
+        &::after{
+          bottom:-5px;
+          box-shadow: 0px 1px 1px #ddd inset;
+        }
+        b{
+          font-size: 40px;
+          color: @baseColor;
+        }
+        sub{
+          color: @baseColor;
+          bottom: 0;
+        }
+        p{
+          font-size: 12px;
+        }
+        .wjs_tips{
+          position: absolute;
+          width: 100%;
+          top: 15px;
+          //left: 50%;
+          //transform: translate(-50%,0);
+          span{
+            display: inline-block;
+            width: 15px;
+            height: 16px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 14px;
+
+        }
+          span:nth-of-type(1){
+            color: @baseColor;
+            border: 1px solid @baseColor;
+          }
+          span:nth-of-type(2){
+            color: blue;
+            border: 1px solid blue;
+          }
+        }
+      }
+      .left{
+        width: 100%;
+        height: 150px;
+        background-color: #fff;
+        padding-right: 100px;
+
+        >h3{
+          font-size: 15px;
+          text-align: center;
+          line-height: 30px;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .row{
+          margin-left: 0;
+          margin-right: 0;
+          font-size: 12px;
+          >div{
+            padding: 0 5px;
+          }
+          >div:nth-of-type(2n){
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+//新闻
+.wjs_news{
+  margin-top: 20px;
+  .container{
+    padding: 0 15px;
+    h3{
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+
+      }
+    }
+    .nav-tabs{
+      border-bottom: none;
+      li{
+        margin-bottom: 60px;
+        a{
+          display: block;
+          width: 60px;
+          height: 60px;
+          border: none;
+          border-radius: 50%;
+          background-color: #ddd;
+          span{
+            font-size: 30px;
+            color: #fff;
+          }
+          &:hover{
+            background-color: @baseColor;
+          }
+        }
+      }
+      li:nth-of-type(4){
+        margin-bottom: 0;
+      }
+      li.active{
+        a{
+          background-color: @baseColor;
+        }
+      }
+      @media screen and (min-width: 768px) and(max-width: 992px) {
+        li{margin: 20px 30px};
+      }
+      @media screen and (min-width: 332px) and(max-width: 768px){
+        li{width: 25%;margin:20px 0;}
+      }
+    }
+    .newLine{
+      width: 1px;
+      height: 100%;
+      border-right: 1px dashed red;
+      position: absolute;
+      left: 45px;
+      top: 0;
+    }
+    .tab-content{
+      ul{
+        list-style: none;
+        li{
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}
+//尾部
+.wjs_partner{
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #eee; text-align: center;
+  h3{
+    line-height: 50px;
+  }
+  ul{
+    list-style: none;
+    li{
+      display: inline-block;
+      padding: 0 5px;
+      a{
+       font-size: 80px;
+        line-height: 80px;
+      }
+    }
+  }
+}

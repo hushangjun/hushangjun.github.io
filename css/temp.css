@@ -1,0 +1,31 @@
+a {
+  color: #e92322;
+}
+div {
+  border: 1px solid #e92322;
+}
+div {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+header {
+  width: 100%;
+  background-color: #e92322;
+}
+header > div {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+header > div a {
+  font-size: 20px;
+  display: block;
+}
+header > div a:hover {
+  text-decoration: none;
+}
